@@ -3,7 +3,7 @@ for i in {0..9}; do
         aria2c -s 16 -k 1M "https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/$(date +"%Y-%m")/Estabelecimentos${i}.zip";
     else
         echo "O arquivo já existe, pulando.";
-    if
+    fi
 done
 
 for i in {0..9}; do
