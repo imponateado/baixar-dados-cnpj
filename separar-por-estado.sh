@@ -1,0 +1,2 @@
+UF=$(clickhouse-local --query "SELECT DISTINCT uf FROM file('estabs.parquet')")
+for i in $UF; do clickhouse-local --query "SELECT * FROM file('estabs.parquet') WHERE uf = '${i}' INTO OUTFILE 'estabs_${i}.parquet' FORMAT Parquet SETTINGS output_format_parquet_compression_method='zstd'"; done
